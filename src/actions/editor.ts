@@ -131,7 +131,7 @@ import {
 	Slug,
 	TagID,
 	TODOType,
-	Uid 
+	Uid
 } from '../types.js';
 
 import {
@@ -636,9 +636,9 @@ export const addImageWithFile : AppActionCreator = (file : File, index : number)
 	if (rawFileNameParts.length >= 2) {
 		rawFileNameParts[rawFileNameParts.length - 2] += '_' + randomString(6);
 	}
-	
+
 	const fileName = rawFileNameParts.join('.');
-	
+
 	const fileRef = ref(userUploadRef, fileName);
 
 	try {
@@ -811,7 +811,7 @@ export const addReferenceToCard : AppActionCreator = (cardID, referenceType) => 
 		return;
 	}
 
-	const reason = referencesNonModifying(editingCard).mayNotSetCardReferenceReason(state, cardID, referenceType); 
+	const reason = referencesNonModifying(editingCard).mayNotSetCardReferenceReason(state, cardID, referenceType);
 
 	if (reason) {
 		console.warn(reason);
